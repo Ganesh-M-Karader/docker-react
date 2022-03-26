@@ -1,9 +1,10 @@
-language: generic 
 sudo: required
+language: generic
+
 services:
     - docker
 
-before-installing:
+before-install:
     - docker build -t ganeshakarader/docker-react -f Dockerfile.dev .
 
 script:
