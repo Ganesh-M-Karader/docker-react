@@ -1,0 +1,10 @@
+language: generic 
+sudo: required
+services:
+    - docker
+
+before-installing:
+    - docker build -t ganeshakarader/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true ganeshakarader/docker-react npm run test -- --coverage
